@@ -32,13 +32,18 @@ def analyse(sentence):
 def searchAnswer(sentence, subject, typeS):
     plugin = PluginFactory.getPlugin(subject, typeS)
     return plugin.response(sentence)
-    
-if __name__ == '__main__':
+
+def bibiQuestion(question):
     subjects, types, stopwords, dictionnary = tools.defaultValues()
-    while True:
-        print("Tape your sentence:")
-        test= input()
-        rSubject, rType, rValue= analyse(test)
-        result = searchAnswer(test, subjects[numpy.argmax(rSubject)], types[numpy.argmax(rType)])
-        print(result)
+    rSubject, rType, rValue = analyse(question)
+    result = searchAnswer(question, subjects[numpy.argmax(rSubject)], types[numpy.argmax(rType)])
+    return result
     
+# if __name__ == '__main__':
+#     subjects, types, stopwords, dictionnary = tools.defaultValues()
+#     while True:
+#         print("Tape your sentence:")
+#         test= input()
+#         rSubject, rType, rValue= analyse(test)
+#         result = searchAnswer(test, subjects[numpy.argmax(rSubject)], types[numpy.argmax(rType)])
+#         print(result)
