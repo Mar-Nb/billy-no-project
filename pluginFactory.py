@@ -1,6 +1,8 @@
+import imp
 from pluginDefault import PluginDefault
 from plugins.alarm.plugin import PluginAlarm
 from plugins.remote.plugin import PluginRemote
+from plugins.opening.plugin import PluginOpening
 
 class PluginFactory:
 
@@ -10,4 +12,6 @@ class PluginFactory:
             return PluginAlarm(subject, typeS)
         elif themeName== "remote":
             return PluginRemote(subject, typeS)
+        elif themeName== "opening":
+            return PluginOpening(subject, typeS)            
         return PluginDefault(subject, typeS)
