@@ -1,6 +1,3 @@
-from itsdangerous import json
-from matplotlib.font_manager import json_load
-import json
 import models
 import tools
 import tensorflow as tf
@@ -39,14 +36,10 @@ def searchAnswer(sentence, subject, typeS):
 def bibiQuestion(question):
     subjects, types, stopwords, dictionnary = tools.defaultValues()
     rSubject, rType, rValue = analyse(question)
-    result = searchAnswer(question, subjects[numpy.argmax(rSubject)], types[numpy.argmax(rType)])
+
+    try:
+        result = searchAnswer(question, subjects[numpy.argmax(rSubject)], types[numpy.argmax(rType)])
+    except Exception as e:
+        result = str(e)
+
     return result
-    
-# if __name__ == '__main__':
-#     subjects, types, stopwords, dictionnary = tools.defaultValues()
-#     while True:
-#         print("Tape your sentence:")
-#         test= input()
-#         rSubject, rType, rValue= analyse(test)
-#         result = searchAnswer(test, subjects[numpy.argmax(rSubject)], types[numpy.argmax(rType)])
-#         print(result)
