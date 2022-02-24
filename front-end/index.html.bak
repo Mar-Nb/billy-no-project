@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="front-end.css">
+  <title>Bibi le Bot</title>
+</head>
+
+<body>
+  <header class="page-header">
+    <img src="bot-image.jpg" alt="bibi-icon">
+    <span class="bot-name">Bibi</span>
+	<span class="active-bot"></span>
+  </header>
+  
+  <main>
+		<ul id="lst-conv">
+			<li class="bot-msg">
+				<div class="relative max-w-xl px-4 py-2 text-gray-700 rounded shadow">
+					<span class="block">Hi</span>
+				</div>
+			</li>
+			
+			<li class="user-msg">
+				<div class="relative max-w-xl px-4 py-2 text-gray-700 rounded shadow">
+					<span class="block">Hiiii</span>
+				</div>
+			</li>
+		</ul>
+  </main>
+
+  <footer>
+    <input id="zone-msg" type="text" placeholder="Message">
+	<button id="send-msg" class="btn-submit">
+		<svg class="svg-btn-submit" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+			<path d = "M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+        </svg>
+	</button>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+
+</html>
