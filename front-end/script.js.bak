@@ -1,0 +1,4 @@
+document.getElementById("send-msg").addEventListener("click", function() {
+	alert("Message adressé");
+	document.getElementById("zone-msg").value = "";
+});
