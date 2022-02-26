@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital@0;1&display=swap');
+@import "transition.min.css";
 
 * {
     margin: 0;
@@ -115,6 +116,7 @@ main ul {
 
 .bot-msg, .user-msg {
 	display: flex;
+	animation: ld-float-ttb-in 1s linear;
 }
 
 .bot-msg {
@@ -147,4 +149,14 @@ li.bot-msg div {
 
 li.user-msg div {
 	border: 2px solid #7289da;
+}
+
+audio {
+	height: 2rem;
+	margin-top: 0.8rem;
+	margin-bottom: 0.5rem;
+}
+
+audio::-webkit-media-controls-panel {
+	background: linear-gradient(green, lime);
 }
