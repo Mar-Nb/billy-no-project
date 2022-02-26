@@ -1,6 +1,6 @@
 [{
     "subject":"Opening",
-    "sentences": ["Opening Bleach"],
+    "sentences": ["Opening", "opening", "OP", "op"],
     "responses": [""],
     "value": 0,
     "type":"question"

@@ -16,8 +16,8 @@ class PluginOpening(PluginDefault):
             # récupère les animes et les liens de leur playlist
             f = open('./Opening.json')
             animes = json.load(f)
-            anime = animes[sentence.replace("Opening ", "")]
-
+            anime = animes[sentence.replace("Opening ", "").replace("opening ", "").replace("op ", "").replace("OP ", "")]
+            
             # récupère les opening de la playlist
             track_ids = []
             playlist = spotify.user_playlist("Kuraihani", anime)
@@ -42,7 +42,8 @@ class PluginOpening(PluginDefault):
                 dictionnaire[name]["cover"] = cover
                 json_string = json.dumps(dictionnaire, ensure_ascii=False).encode("utf8")
             return json_string.decode()
-        except ValueError:
-            return "Votre anime ne fais pas partie de la liste"
+        except Exception:
+            error_string = json.dumps('{"error": "Votre anime ne fais pas partie de la liste"}', ensure_ascii=False).encode("utf8")
+            return error_string.decode()
 
     
