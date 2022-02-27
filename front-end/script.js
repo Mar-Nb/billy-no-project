@@ -44,7 +44,6 @@ function responseBot(question) {
 				{
 					response = response + res2[opening].album + "<br/>"		
 					response = response + "<audio controls src='" + res2[opening].audio + "'><code>audio</code></audio><br/>"
-					console.log("<audio src='" + res2[opening].audio + "'></audio><br/>")
 				}
 			}	
 			response = parser.parseFromString(response, 'text/html');
@@ -56,6 +55,7 @@ function responseBot(question) {
 			res2 = JSON.parse(res.reponse);
 			err = JSON.parse(res2);
 			document.getElementById("lst-conv").appendChild(createBulle(err.error, false));		
+			//document.getElementById("add-op").addEventListener("onclick", addOp("Opening ajouter "+anime));
 		}
 		else{
 			res = JSON.parse(ajax.response);
@@ -64,4 +64,19 @@ function responseBot(question) {
 	}
 
 	ajax.send(formData);
+}
+
+function addOp(){
+	var ajax = new XMLHttpRequest();
+	var formData = new FormData();
+	anime = "Opening ajouter "+document.getElementById("input-anime").value;
+	console.log(anime);
+	formData.append("question", anime);
+	ajax.open("POST", "http://localhost:5000/bibi-reponse");
+	ajax.onload = function() {
+		res = JSON.parse(ajax.response);
+		console.log(res);
+		document.getElementById("lst-conv").appendChild(createBulle(res.reponse, false));	
+	}	
+	ajax.send(formData);	
 }

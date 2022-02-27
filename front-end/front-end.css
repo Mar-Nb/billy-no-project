@@ -160,3 +160,9 @@ audio {
 audio::-webkit-media-controls-panel {
 	background: linear-gradient(green, lime);
 }
+
+.bibi_button_add{
+	padding: 5px;
+	border-radius: 12px;
+	float: right;
+}
