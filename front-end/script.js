@@ -54,8 +54,8 @@ function responseBot(question) {
 			res = JSON.parse(ajax.response);
 			res2 = JSON.parse(res.reponse);
 			err = JSON.parse(res2);
-			document.getElementById("lst-conv").appendChild(createBulle(err.error, false));		
-			//document.getElementById("add-op").addEventListener("onclick", addOp("Opening ajouter "+anime));
+			document.getElementById("lst-conv").appendChild(createBulle(err.error, false));
+			document.getElementById("name-anime").value = err.anime;
 		}
 		else{
 			res = JSON.parse(ajax.response);
@@ -69,7 +69,8 @@ function responseBot(question) {
 function addOp(){
 	var ajax = new XMLHttpRequest();
 	var formData = new FormData();
-	anime = "Opening ajouter "+document.getElementById("input-anime").value;
+	name_anime = document.getElementById("name-anime").value;
+	anime = "Opening ajouter "+document.getElementById("input-"+name_anime).value + "|" + document.getElementById("input-url-"+name_anime).value;
 	console.log(anime);
 	formData.append("question", anime);
 	ajax.open("POST", "http://localhost:5000/bibi-reponse");
