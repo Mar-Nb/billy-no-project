@@ -16,7 +16,7 @@ class PluginYoutube(PluginDefault):
             index = int(select)
             with open(file,'r+') as json_data:
                 data_dict = json.load(json_data) 
-                if index < len(data_dict["opening"]) or index == 0:
+                if index > len(data_dict["opening"]) or index == 0:
                     HI_string = "Nom: <input id=\'input-youtube-name\' /><br/>URL:<input id=\'input-youtube-url\' /><br/><button onclick=\'addURL()\' class=\'bibi_button_add\'>Ajouter</button>"
                     return HI_string
                 else: 

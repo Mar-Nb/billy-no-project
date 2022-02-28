@@ -12,7 +12,7 @@ class PluginOpening(PluginDefault):
     def response(self, sentence=""):
         print(sentence)
         if "ajouter" in sentence:
-            file='Opening.json'
+            file='./Opening.json'
             anime_url = []
             anime_url = sentence.split("|")
             anime = anime_url[0]
