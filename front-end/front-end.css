@@ -162,7 +162,23 @@ audio::-webkit-media-controls-panel {
 }
 
 .bibi_button_add{
-	padding: 5px;
+	padding: 10px;
 	border-radius: 12px;
 	float: right;
+	cursor: pointer;
+	background: linear-gradient(green, lime);
+	border: none;
+	width: 100px;
+	margin-top: 5px;
+}
+
+.bibi_button_validate{
+	padding: 10px;
+	border-radius: 12px;
+	float: right;
+	cursor: pointer;
+	background: linear-gradient(rgb(228, 110, 110), red);
+	border: none;
+	width: 100px;
+	margin-top: 5px;
 }

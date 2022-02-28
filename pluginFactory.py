@@ -16,6 +16,6 @@ class PluginFactory:
         elif themeName== "opening":
             return PluginOpening(subject, typeS)     
         elif themeName== "youtube":
-            return PluginYoutube                   
+            return PluginYoutube (subject, typeS)                  
         return PluginDefault(subject, typeS)
 

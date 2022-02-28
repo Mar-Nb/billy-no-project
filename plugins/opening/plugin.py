@@ -12,7 +12,7 @@ class PluginOpening(PluginDefault):
     def response(self, sentence=""):
         print(sentence)
         if "ajouter" in sentence:
-            file='./Opening.json'
+            file='Opening.json'
             anime_url = []
             anime_url = sentence.split("|")
             anime = anime_url[0]
@@ -58,7 +58,7 @@ class PluginOpening(PluginDefault):
                 return json_string.decode()
             except Exception:
                 anime = sentence.replace("Opening ", "").replace("opening ", "").replace("op ", "").replace("OP ", "")
-                error_string = json.dumps('{"error": "L\'anime <input id=\'input-'+anime+'\' readonly=\'readonly\' value=\''+anime+'\' />est sans playlist pour lui en ajouter une écrire l\'url de la playlist dans le champs ci-dessous et appuyer sur \'Ajouter\'.<br/>URL:<input id=\'input-url-'+anime+'\' /><br/><button onclick=\'addOp()\' class=\'bibi_button_y\'>Ajouter</button>", "anime": "'+anime+'"}', ensure_ascii=False).encode("utf8")
+                error_string = json.dumps('{"error": "L\'anime <input id=\'input-'+anime+'\' readonly=\'readonly\' value=\''+anime+'\' />est sans playlist pour lui en ajouter une écrire l\'url de la playlist dans le champs ci-dessous et appuyer sur \'Ajouter\'.<br/>URL:<input id=\'input-url-'+anime+'\' /><br/><button onclick=\'addOp()\' class=\'bibi_button_add\'>Ajouter</button>", "anime": "'+anime+'"}', ensure_ascii=False).encode("utf8")
                 return error_string.decode()
 
 
